@@ -37,7 +37,9 @@ function Header() {
     };
   }, []);
 
-  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
+  const handleClick = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>
+  ): void => {
     setbutton(event.currentTarget);
   };
   const handleClose = () => {
@@ -110,8 +112,8 @@ function Header() {
             <>
               <div className="flex cursor-pointer">
                 <div
-                      onClick={(event) => handleClick(event)}
-                      className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
+                  onClick={(event) => handleClick(event)}
+                  className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
                 >
                   <span className="inline-block relative m-0 align-middle">
                     <MdAccountCircle size={"29"} />
@@ -138,27 +140,29 @@ function Header() {
       >
         <div className="m-0 font-[400] text-[1rem] leading-[1.5] tracking-[0.00938em] p-0">
           <div className="p-[18px]">
-            <div className="__ItemPopoverListStyle flex p-[16px] cursor-pointer rounded-[12px] items-[start] gap-[16px] min-w-[313px] hover:bg-[#1d1d1d] transitionn-[all_0.3s_ease_0s]">
-              <>
-                <span className="inline-block relative m-0 align-middle">
-                  <IconContext.Provider
-                    value={{
-                      size: "29",
-                    }}
-                  >
-                    <MdAccountCircle />
-                  </IconContext.Provider>
-                </span>
-              </>
-              <div className="grid gap-[4px]">
-                <p className="text-[16px] leading-[19.2px] font-extrabold normal-case">
-                  Status
-                </p>
-                <p className="text-[16px] leading-[19.2px] font-extrabold text-zinc-400 normal-case">
-                  Showing to you about website
-                </p>
+            <Link href={"https://status.xzendevx.xyz/"}>
+              <div className="__ItemPopoverListStyle flex p-[16px] cursor-pointer rounded-[12px] items-[start] gap-[16px] min-w-[313px] hover:bg-[#1d1d1d] transitionn-[all_0.3s_ease_0s]">
+                <>
+                  <span className="inline-block relative m-0 align-middle">
+                    <IconContext.Provider
+                      value={{
+                        size: "29",
+                      }}
+                    >
+                      <MdAccountCircle />
+                    </IconContext.Provider>
+                  </span>
+                </>
+                <div className="grid gap-[4px]">
+                  <p className="text-[16px] leading-[19.2px] font-extrabold normal-case">
+                    Status
+                  </p>
+                  <p className="text-[16px] leading-[19.2px] font-extrabold text-zinc-400 normal-case">
+                    Showing to you about website
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
           </div>
         </div>
       </StyledPopover>
