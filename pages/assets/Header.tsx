@@ -73,7 +73,7 @@ function Header() {
                 <>
                   <div className="flex cursor-pointer">
                     <div
-                      onClick={handleClick}
+                      onClick={() => handleClick}
                       className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
                     >
                       <span className="inline-block relative m-0 align-middle">
@@ -110,8 +110,8 @@ function Header() {
             <>
               <div className="flex cursor-pointer">
                 <div
-                  onClick={handleClick}
-                  className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
+                      onClick={() => handleClick}
+                      className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
                 >
                   <span className="inline-block relative m-0 align-middle">
                     <MdAccountCircle size={"29"} />
