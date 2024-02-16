@@ -9,7 +9,7 @@ import { styled } from "@mui/system";
 import * as React from "react";
 
 const StyledPopover = styled(Popover)({
-  ".css-3bmhjh-MuiPaper-root-MuiPopover-paper": {
+  ".css-1dmzujt": {
     background: "#141414",
     color: "white",
     border: "1px solid #525252",
