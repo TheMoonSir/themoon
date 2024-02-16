@@ -18,7 +18,7 @@ const StyledPopover = styled(Popover)({
 });
 
 function Header() {
-  const [button, setbutton] = useState<HTMLButtonElement | null>(null);
+  const [button, setbutton] = useState<HTMLDivElement | null>(null);
   const [client, setclient] = useState<Boolean | null>(null);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ function Header() {
     };
   }, []);
 
-  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (event: React.MouseEvent<HTMLDivElement, MouseEvent>): void => {
     setbutton(event.currentTarget);
   };
   const handleClose = () => {
@@ -73,7 +73,7 @@ function Header() {
                 <>
                   <div className="flex cursor-pointer">
                     <div
-                      onClick={() => handleClick}
+                      onClick={(event) => handleClick(event)}
                       className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
                     >
                       <span className="inline-block relative m-0 align-middle">
@@ -110,7 +110,7 @@ function Header() {
             <>
               <div className="flex cursor-pointer">
                 <div
-                      onClick={() => handleClick}
+                      onClick={(event) => handleClick(event)}
                       className="cursor-pointer relative flex items-center place-content-center w-[48px] rounded-[8px] h-[48px] hover:bg-zinc-700 transitionn-[all_0.3s_ease_0s]"
                 >
                   <span className="inline-block relative m-0 align-middle">
