@@ -122,18 +122,6 @@ const skills = {
     },
   ],
 };
-const info = [
-  {
-    icon: <FaDiscord />,
-    title: "Discord",
-    description: "themoon_.",
-  },
-  {
-    icon: <FaEnvelope />,
-    title: "Email",
-    description: "mail@xzendevx.xyz",
-  },
-];
 
 export default function Home() {
   return (
@@ -161,7 +149,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="container mx-auto">
+      <section className="container mx-auto p-9 bg-[#0f0f0f] rounded-md">
         <div className="flex flex-wrap gap-6 max-w-[80vw] mx-auto xl:max-w-none">
           {stats.map((item, index) => {
             return (
@@ -189,7 +177,7 @@ export default function Home() {
       </section>
 
       <section className="min-h-[50vh] flex flex-col justify-center py-12 xl:py-0">
-        <div className="container mx-auto">
+        <div className="container mx-auto p-9 bg-[#0f0f0f] rounded-md">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-[60px] items-center">
             {services.map((service, index) => {
               return (
@@ -212,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="min-h-[50vh] flex flex-col justify-center py-12 xl:py-0">
+      <section className="min-h-[80vh] flex flex-col items-center justify-center py-12 xl:py-0">
         <div className="container mx-auto">
           <Tabs
             defaultValue="skills"
@@ -233,13 +221,13 @@ export default function Home() {
                         <li key={index}>
                           <TooltipProvider delayDuration={100}>
                             <Tooltip>
-                              <TooltipTrigger>
-                                <div className="text-2xl group-hover:text-blue-400 transition-all duration-300">
+                              <TooltipTrigger className="w-full h-[150px] bg-[#0f0f0f] rounded-xl flex justify-center items-center group">
+                                <div className="text-6xl group-hover:text-blue-400 transition-all duration-300">
                                   {skill.icon}
                                 </div>
                               </TooltipTrigger>
                               <TooltipContent>
-                                <p>{skill.name}</p>
+                                <p className="capitalize">{skill.name}</p>
                               </TooltipContent>
                             </Tooltip>
                           </TooltipProvider>
@@ -252,64 +240,6 @@ export default function Home() {
               <TabsContent value="about">about me</TabsContent>
             </div>
           </Tabs>
-        </div>
-      </section>
-      <section className="mb-[400px]">
-        <div className="container mx-auto">
-          <div className="flex flex-col xl:flex-row gap-[30px] min-h-[20vh]">
-            <div className="xl:h-[54%] order-2 xl:order-none">
-              <div className="flex flex-col gap-6 p-10 bg-[#0f0f0f] rounded-xl">
-                <h3 className="text-4xl">Content me!</h3>
-                <p className="text-white/60">
-                  For content me you can to write here message, or just talk
-                  with me on discord whatever you want. and we will talk about
-                  what do you want me to do
-                  <br />
-                  Choose service that you want to hire me for.
-                </p>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <Input type="Name" placeholder="Your Name" />
-                  <Input type="Email" placeholder="Email" />
-                </div>
-                <Select>
-                  <SelectTrigger className="w-full">
-                    <SelectValue placeholder="Select a serivce" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectGroup>
-                      <SelectLabel>Services</SelectLabel>
-                      <SelectItem value="wbt">Web Development</SelectItem>
-                      <SelectItem value="rdu">Roblox Development UI</SelectItem>
-                    </SelectGroup>
-                  </SelectContent>
-                </Select>
-                <Textarea
-                  className="h-[200px]"
-                  placeholder="Write your message here."
-                />
-                <Button size={"md"} className="max-w-40">
-                  Send message
-                </Button>
-              </div>
-            </div>
-            <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-              <ul className="flex flex-col gap-10">
-                {info.map((item, index) => {
-                  return (
-                    <li key={index} className="flex items-center gap-6">
-                      <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#131313] text-white rounded-md flex items-center justify-center">
-                        <div className="text-[28px]">{item.icon}</div>
-                      </div>
-                      <div className="flex-1">
-                        <p className="text-white/60">{item.title}</p>
-                        <h3 className="text-xl">{item.description}</h3>
-                      </div>
-                    </li>
-                  );
-                })}
-              </ul>
-            </div>
-          </div>
         </div>
       </section>
     </app-root>
