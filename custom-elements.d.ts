@@ -5,7 +5,7 @@ declare namespace JSX {
       HTMLElement
     >;
     "app-root": React.DetailedHTMLProps<
-    React.HTMLAttributes<HTMLElement> & { class?: string }, // Add className attribute
+    React.HTMLAttributes<HTMLElement> & { class?: string },
     HTMLElement
   >;
   }
